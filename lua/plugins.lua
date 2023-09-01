@@ -1,9 +1,5 @@
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
-    use { "ellisonleao/gruvbox.nvim" }
-    use { 'williamboman/mason.nvim' }
-    use { 'williamboman/mason-lspconfig.nvim'}
-    use { 'neovim/nvim-lspconfig' }
     use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }
     use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }
     use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }        -- buffer auto-completion
@@ -11,6 +7,10 @@ return require('packer').startup(function(use)
     use { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' }       -- cmdline auto-completion
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
+    use { "ellisonleao/gruvbox.nvim" }
+    use { 'williamboman/mason.nvim' }
+    use { 'williamboman/mason-lspconfig.nvim'}
+    use { 'neovim/nvim-lspconfig' }
     use { 'neoclide/coc.nvim', branch = 'release' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'mhinz/vim-signify'
@@ -19,4 +19,5 @@ return require('packer').startup(function(use)
     use {'nvim-telescope/telescope.nvim', tag = '0.1.2' }
     use { 'onsails/lspkind-nvim' }
     use { 'ray-x/lsp_signature.nvim' }
+    use { 'tpope/vim-commentary' }
 end)

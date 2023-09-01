@@ -4,6 +4,7 @@ local opts = {
 }
 
 K = vim.keymap.set
+vim.g.mapleader = ' '
 
 -- Quick Save
 K('n', '<C-s>', ':w<Cr>', opts)
@@ -29,3 +30,13 @@ K("v", "<A-j>", ":m'>+<CR>==gv", opts)
 K('n', '<C-f>', ':Telescope find_files<Cr>', opts)
 
 -- Tab AutoComplete
+
+-- Duplicate Line/s
+K('n', '<C-d>', 'Vyp', opts)
+K('v', '<C-d>', 'yp', opts)
+K('x', '<C-d>', 'yp', opts)
+
+-- Commenting
+K('n', '<Leader>/', ':Commentary<Cr>', opts)
+K('v', '<Leader>/', ':Commentary<Cr>', opts)
+K('x', '<Leader>/', ':Commentary<Cr>', opts)
