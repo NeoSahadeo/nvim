@@ -1,4 +1,5 @@
 return require('packer').startup(function(use)
+    use 'wbthomason/packer.nvim'
     use { "ellisonleao/gruvbox.nvim" }
     use { 'williamboman/mason.nvim' }
     use { 'williamboman/mason-lspconfig.nvim'}
@@ -13,5 +14,6 @@ return require('packer').startup(function(use)
     use { 'neoclide/coc.nvim', branch = 'release' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'mhinz/vim-signify'
---    use 'dense-analysis/ale'
+    use { "neovim/nvim-lspconfig" }
+    --    use 'dense-analysis/ale'
 end)

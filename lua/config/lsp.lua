@@ -1,17 +1,9 @@
-require('mason').setup({
-    ui = {
-        icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-        }
-    }
-})
+require('mason').setup()
 
-require('mason-lspconfig').setup({
+--require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = {
+--    ensure_installed = {
 --        'pylsp',
-        'lua_ls',
-        'rust_analyzer' },
-})
+--        'lua_ls',
+--    }
+--})

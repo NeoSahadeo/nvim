@@ -6,6 +6,7 @@ require('colourscheme')
 require('config.nvim-cmp')
 require('config.lsp')
 require('config.tree-sitter')
+require('config.lspconfig')
 
 require('config.signify')
 require('config.coc')

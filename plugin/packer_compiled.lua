@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/home/neosahadeo/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ale = {
-    loaded = true,
-    path = "/home/neosahadeo/.local/share/nvim/site/pack/packer/start/ale",
-    url = "https://github.com/dense-analysis/ale"
-  },
   ["cmp-buffer"] = {
     after_files = { "/home/neosahadeo/.local/share/nvim/site/pack/packer/opt/cmp-buffer/after/plugin/cmp_buffer.lua" },
     load_after = {},
@@ -142,7 +137,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/mason.nvim"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-cmdline", "cmp-nvim-lsp", "cmp-buffer", "cmp-path" },
+    after = { "cmp-nvim-lsp", "cmp-path", "cmp-buffer", "cmp-cmdline" },
     config = { "require('config.nvim-cmp')" },
     loaded = true,
     only_config = true,
@@ -159,6 +154,11 @@ _G.packer_plugins = {
     path = "/home/neosahadeo/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["packer.nvim"] = {
+    loaded = true,
+    path = "/home/neosahadeo/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
+  },
   ["vim-signify"] = {
     loaded = true,
     path = "/home/neosahadeo/.local/share/nvim/site/pack/packer/start/vim-signify",
@@ -173,10 +173,10 @@ require('config.nvim-cmp')
 time([[Config for nvim-cmp]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
+vim.cmd [[ packadd cmp-path ]]
 vim.cmd [[ packadd cmp-cmdline ]]
 vim.cmd [[ packadd cmp-buffer ]]
 vim.cmd [[ packadd cmp-nvim-lsp ]]
-vim.cmd [[ packadd cmp-path ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
