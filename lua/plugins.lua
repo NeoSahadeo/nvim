@@ -18,4 +18,5 @@ return require('packer').startup(function(use)
     use {'nvim-lua/plenary.nvim' }
     use {'nvim-telescope/telescope.nvim', tag = '0.1.2' }
     use { 'onsails/lspkind-nvim' }
+    use { 'ray-x/lsp_signature.nvim' }
 end)
