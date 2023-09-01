@@ -3,20 +3,29 @@ local opts = {
     silent = true,
 }
 
-k = vim.keymap.set
+K = vim.keymap.set
 
 -- Quick Save
-k('n', '<C-s>', ':w<Cr>', opts)
-k('v', '<C-s>', '<Esc>:w<Cr>', opts)
-k('i', '<C-s>', '<Esc>:w<Cr>', opts)
-k('x', '<C-s>', '<Esc>:w<Cr>', opts)
+K('n', '<C-s>', ':w<Cr>', opts)
+K('v', '<C-s>', '<Esc>:w<Cr>', opts)
+K('i', '<C-s>', '<Esc>:w<Cr>', opts)
+K('x', '<C-s>', '<Esc>:w<Cr>', opts)
 
 -- Indenting
-k('v', '>', '>gv', opts)
-k('v', '<', '<gv', opts)
+K('v', '>', '>gv', opts)
+K('v', '<', '<gv', opts)
 
 -- Select All
-k('n', '<C-a>', 'ggVG', opts)
+K('n', '<C-a>', 'ggVG', opts)
 
 -- Quick Delete Line
-k('n', '<C-Del>', 'dd', opts)
+K('n', '<C-Del>', 'dd', opts)
+
+-- Move text up and down
+K("v", "<A-k>", ":m-2<CR>==gv", opts)
+K("v", "<A-j>", ":m'>+<CR>==gv", opts)
+
+-- Telescope
+K('n', '<C-f>', ':Telescope find_files<Cr>', opts)
+
+-- Tab AutoComplete

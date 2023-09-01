@@ -14,6 +14,8 @@ return require('packer').startup(function(use)
     use { 'neoclide/coc.nvim', branch = 'release' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'mhinz/vim-signify'
-    use { "neovim/nvim-lspconfig" }
-    --    use 'dense-analysis/ale'
+    use 'jiangmiao/auto-pairs'
+    use {'nvim-lua/plenary.nvim' }
+    use {'nvim-telescope/telescope.nvim', tag = '0.1.2' }
+    use { 'onsails/lspkind-nvim' }
 end)

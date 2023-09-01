@@ -10,3 +10,4 @@ require('config.lspconfig')
 
 require('config.signify')
 require('config.coc')
+require('config.telescope')
