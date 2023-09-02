@@ -40,3 +40,7 @@ K('x', '<C-d>', 'yp', opts)
 K('n', '<Leader>/', ':Commentary<Cr>', opts)
 K('v', '<Leader>/', ':Commentary<Cr>', opts)
 K('x', '<Leader>/', ':Commentary<Cr>', opts)
+
+-- Insert Mode Navigation
+K('i', '<A-$>', '<Esc>$a')
+K('i', '<A-^>', '<Esc>^i')
