@@ -8,8 +8,8 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
     use { "ellisonleao/gruvbox.nvim" }
-    use { 'williamboman/mason.nvim' }
-    use { 'williamboman/mason-lspconfig.nvim'}
+    -- use { 'williamboman/mason.nvim' }
+    -- use { 'williamboman/mason-lspconfig.nvim'}
     use { 'neovim/nvim-lspconfig' }
     use { 'neoclide/coc.nvim', branch = 'release' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}

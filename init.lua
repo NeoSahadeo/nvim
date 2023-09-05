@@ -4,7 +4,7 @@ require('plugins')
 require('colourscheme')
 
 require('config.nvim-cmp')
-require('config.lsp')
+-- require('config.lsp')
 require('config.tree-sitter')
 -- require('config.lspconfig')
 
