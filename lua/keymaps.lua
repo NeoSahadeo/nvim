@@ -1,6 +1,11 @@
-local opts = {
-    noremap = true,
+local opts = { 
     silent = true,
+    noremap = true,
+}
+local coc_opts = {
+    silent = true,
+    noremap = true,
+    expr = true,
 }
 
 K = vim.keymap.set
@@ -29,8 +34,6 @@ K("v", "<A-j>", ":m'>+<CR>==gv", opts)
 -- Telescope
 K('n', '<C-f>', ':Telescope find_files<Cr>', opts)
 
--- Tab AutoComplete
-
 -- Duplicate Line/s
 K('n', '<C-d>', 'Vyp', opts)
 K('v', '<C-d>', 'yp', opts)
@@ -44,3 +47,15 @@ K('x', '<Leader>/', ':Commentary<Cr>', opts)
 -- Insert Mode Navigation
 K('i', '<A-$>', '<Esc>$a')
 K('i', '<A-^>', '<Esc>^i')
+
+-- COC keybinds
+vim.keymap.set('i', '<Cr>',
+function() 
+    -- Returns 1 if visible, 0 if not
+    is_visible = vim.fn['coc#pum#visible']()
+    if is_visible == 1 then
+        return vim.fn['coc#pum#confirm']()
+    else
+        return '<Cr>'
+    end
+end, coc_opts)
