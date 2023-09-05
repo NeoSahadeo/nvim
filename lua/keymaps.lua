@@ -59,3 +59,10 @@ function()
         return '<Cr>'
     end
 end, coc_opts)
+
+-- Autoclosing
+K('i', "'", "''<Esc>i", opts)
+K('i', '"', '""<Esc>i', opts)
+K('i', '(', '()<Esc>i', opts)
+K('i', '[', '[]<Esc>i', opts)
+K('i', '{', '{}<Esc>i', opts)
