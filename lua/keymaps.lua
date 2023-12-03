@@ -66,3 +66,13 @@ end, coc_opts)
 -- K('i', '(', '()<Esc>i', opts)
 -- K('i', '[', '[]<Esc>i', opts)
 -- K('i', '{', '{}<Esc>i', opts)
+
+-- Quick Repeat
+-- K('n', '!', ':&&<Cr>', opts)
+--
+-- Switch To previous file
+K('n', '<C-x>', '<C-^>')
+
+K('n', '<C-z>', '')
+K('v', '<C-z>', '')
+K('i', '<C-z>', '')
