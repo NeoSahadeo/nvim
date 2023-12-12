@@ -1,4 +1,4 @@
-local opts = { 
+local opts = {
     silent = true,
     noremap = true,
 }
@@ -73,6 +73,12 @@ end, coc_opts)
 -- Switch To previous file
 K('n', '<C-x>', '<C-^>')
 
+-- Remove Control Z
 K('n', '<C-z>', '')
 K('v', '<C-z>', '')
 K('i', '<C-z>', '')
+
+-- Quick file exlporer
+K('n', '<C-e>', ':Ex<Cr>')
+K('v', '<C-e>', ':Ex<Cr>')
+K('i', '<C-e>', ':Ex<Cr>')

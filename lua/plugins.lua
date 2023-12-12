@@ -17,4 +17,6 @@ return require('packer').startup(function(use)
     use { 'onsails/lspkind-nvim' }
     use { 'ray-x/lsp_signature.nvim' }
     use { 'tpope/vim-commentary' }
+
+    -- use { 'davidhalter/jedi-vim' }
 end)
