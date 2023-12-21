@@ -19,4 +19,5 @@ return require('packer').startup(function(use)
     use { 'tpope/vim-commentary' }
 
     -- use { 'davidhalter/jedi-vim' }
+    use { 'dense-analysis/ale' }
 end)
