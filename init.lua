@@ -12,3 +12,8 @@ require('config.signify')
 require('config.coc')
 require('config.telescope')
 require('config.lsp_signature')
+
+vim.bo.tabstop = 2
+vim.bo.shiftwidth = 2
+vim.bo.expandtab = true
+vim.bo.softtabstop = 2
