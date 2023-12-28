@@ -8,15 +8,19 @@ return require('packer').startup(function(use)
     -- use 'L3MON4D3/LuaSnip'
     -- use 'saadparwaiz1/cmp_luasnip'
     use { "ellisonleao/gruvbox.nvim" }
-    use { 'neovim/nvim-lspconfig' }
-    use { 'neoclide/coc.nvim', branch = 'release' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+
     use 'mhinz/vim-signify'
+    use { 'tpope/vim-commentary' }
+
     use {'nvim-lua/plenary.nvim' }
     use {'nvim-telescope/telescope.nvim', tag = '0.1.2' }
-    use { 'onsails/lspkind-nvim' }
-    use { 'ray-x/lsp_signature.nvim' }
-    use { 'tpope/vim-commentary' }
+
+    use { 'neoclide/coc.nvim', branch = 'release' }
+
+    -- use { 'onsails/lspkind-nvim' }
+    -- use { 'neovim/nvim-lspconfig' }
+    -- use { 'ray-x/lsp_signature.nvim' }
 
     -- use { 'davidhalter/jedi-vim' }
     use { 'dense-analysis/ale' }
