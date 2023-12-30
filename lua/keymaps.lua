@@ -21,6 +21,10 @@ K('x', '<C-s>', '<Esc>:w<Cr>', opts)
 K('v', '>', '>gv', opts)
 K('v', '<', '<gv', opts)
 
+-- Incrementing
+K('n', '<C-n>', '<C-a>', opts)
+K('v', '<C-n>', '<C-a>', opts)
+
 -- Select All
 K('n', '<C-a>', 'ggVG', opts)
 
