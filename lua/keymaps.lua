@@ -44,9 +44,9 @@ K('v', '<C-d>', 'yp', opts)
 K('x', '<C-d>', 'yp', opts)
 
 -- Commenting
-K('n', '<Leader>/', ':Commentary<Cr>', opts)
-K('v', '<Leader>/', ':Commentary<Cr>', opts)
-K('x', '<Leader>/', ':Commentary<Cr>', opts)
+K('n', '<Leader>/', 'gcc', opts)
+K('v', '<Leader>/', 'gcc', opts)
+K('x', '<Leader>/', 'gcc', opts)
 
 -- Insert Mode Navigation
 K('i', '<A-$>', '<Esc>$a')
@@ -54,7 +54,7 @@ K('i', '<A-^>', '<Esc>^i')
 
 -- COC keybinds
 vim.keymap.set('i', '<Cr>',
-function() 
+function()
     -- Returns 1 if visible, 0 if not
     is_visible = vim.fn['coc#pum#visible']()
     if is_visible == 1 then
@@ -83,6 +83,31 @@ K('v', '<C-z>', '')
 K('i', '<C-z>', '')
 
 -- Quick file exlporer
-K('n', '<C-e>', ':Ex<Cr>')
-K('v', '<C-e>', ':Ex<Cr>')
-K('i', '<C-e>', ':Ex<Cr>')
+-- K('n', '<C-e>', ':Ex<Cr>')
+-- K('v', '<C-e>', ':Ex<Cr>')
+-- K('i', '<C-e>', ':Ex<Cr>')
+
+-- Single Search
+K('n', '<C-/>', '/\\<', opts)
+
+-- Copy Command
+K('v', 'y',
+function ()
+  print('Copied!')
+  return '"ay'
+end
+, {
+  noremap = true,
+  expr = true
+})
+
+K({'n', 'v', 'x'}, 'p',
+function ()
+  print('Pasted!')
+  return '"ap'
+end
+, {
+  noremap = true,
+  expr = true
+}
+)
