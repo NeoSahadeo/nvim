@@ -53,7 +53,7 @@ K('i', '<A-$>', '<Esc>$a')
 K('i', '<A-^>', '<Esc>^i')
 
 -- COC keybinds
-vim.keymap.set('i', '<Cr>',
+--[[ vim.keymap.set('i', '<Cr>',
 function()
     -- Returns 1 if visible, 0 if not
     is_visible = vim.fn['coc#pum#visible']()
@@ -62,7 +62,7 @@ function()
     else
         return '<Cr>'
     end
-end, coc_opts)
+end, coc_opts) ]]
 
 -- Autoclosing
 -- K('i', "'", "''<Esc>i", opts)
