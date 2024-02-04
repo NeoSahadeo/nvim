@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
     use 'mhinz/vim-signify'
     use {'nvim-lua/plenary.nvim' }
     use {'nvim-telescope/telescope.nvim', tag = '0.1.2' }
---[[     use { 'neoclide/coc.nvim', branch = 'release' } ]]
+
     use { 'tpope/vim-surround' }
     use { 'vim-airline/vim-airline' }
     use { 'numToStr/Comment.nvim' }

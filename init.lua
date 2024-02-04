@@ -6,7 +6,6 @@ require('config.tree-sitter')
 require('config.signify')
 require('config.telescope')
 require('config.comment')
-require('config.coc')
 
 require('config.nvim-lsp')
 require('config.mason')
