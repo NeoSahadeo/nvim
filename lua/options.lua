@@ -3,6 +3,8 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 vim.opt.mouse = 'a'                 -- allow the mouse to be used in Nvim
 vim.opt.undofile = true
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true
 
 -- Tab
 vim.opt.signcolumn = "yes"

@@ -90,7 +90,7 @@ K('i', '<C-z>', '')
 -- Single Search
 K('n', '<C-/>', '/\\<', opts)
 
--- Copy Command
+-- Copy / Pasting Commands
 K('v', 'y',
 function ()
   print('Copied!')
@@ -109,5 +109,24 @@ end
 , {
   noremap = true,
   expr = true
-}
-)
+})
+
+K({'n', 'v', 'x'}, '<C-p>',
+function ()
+  print('Pasted')
+  return 'p'
+end
+, {
+  noremap = true,
+  expr = true
+})
+
+K({'n', 'x', 'v'}, '<C-y>',
+function ()
+  print('Copied!')
+  return 'y'
+end
+, {
+  noremap = true,
+  expr = true
+})
