@@ -26,7 +26,7 @@ K('n', '<C-Del>', 'dd', opts)
 K("v", "<A-k>", ":m-2<CR>==gv", opts)
 K("v", "<A-j>", ":m'>+<CR>==gv", opts)
 
--- Duplicate Line/s
+-- Duplicate Line/s -- fix
 K('n', '<C-d>', 'Vyp', opts)
 K('v', '<C-d>', 'yp', opts)
 K('x', '<C-d>', 'yp', opts)
