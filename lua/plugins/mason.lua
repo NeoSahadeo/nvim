@@ -13,5 +13,7 @@ return {
     lspconfig.lua_ls.setup{}
     lspconfig.clangd.setup{}
     lspconfig.tsserver.setup{}
+    lspconfig.jedi_language_server.setup{}
+    lspconfig.pylsp.setup{}
   end,
 }
