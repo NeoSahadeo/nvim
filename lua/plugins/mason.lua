@@ -14,6 +14,16 @@ return {
     lspconfig.clangd.setup{}
     lspconfig.tsserver.setup{}
     lspconfig.jedi_language_server.setup{}
-    lspconfig.pylsp.setup{}
+    lspconfig.pylsp.setup{
+      settings = {
+        pylsp = {
+          plugins = {
+            pycodestyle = {enabled = false},
+            pyflakes = {enabled = false},
+            flake8 = {enabled = true},
+          }
+        }
+      }
+    }
   end,
 }
