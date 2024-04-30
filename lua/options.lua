@@ -1,29 +1,40 @@
--- Hint: use `:h <option>` to figure out the meaning if needed
-vim.opt.clipboard = 'unnamedplus'
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
-vim.opt.mouse = 'a'                 -- allow the mouse to be used in Nvim
-vim.opt.undofile = true
-vim.opt.spelllang = 'en_us'
-vim.opt.spell = true
+local o = vim.o
 
--- Tab
-vim.opt.signcolumn = "yes"
-vim.opt.tabstop = 2                 -- number of visual spaces per TAB
-vim.opt.softtabstop = 2             -- number of spacesin tab when editing
-vim.opt.shiftwidth = 2           -- insert 4 spaces on a tab
-vim.opt.expandtab = true           -- tabs are spaces, mainly because of python
+o.number = true
+o.relativenumber = true
+o.clipboard = 'unnamedplus'
+o.undofile = true
 
--- UI config
-vim.opt.number = true               -- show absolute number
-vim.opt.relativenumber = true       -- add numbers to each line on the left side
-vim.opt.cursorline = false          -- highlight cursor line underneath the cursor horizontally
-vim.opt.splitbelow = true           -- open new vertical split bottom
-vim.opt.splitright = true           -- open new horizontal splits right
-vim.opt.wrap = false
-vim.opt.showmode = false            -- we are experienced, wo don't need the "-- INSERT --" mode hint
+o.tabstop = 2
+o.softtabstop = 2
+o.shiftwidth = 2
 
--- Searching
-vim.opt.incsearch = true            -- search as characters are entered
-vim.opt.hlsearch = false           -- do not highlight matches
-vim.opt.ignorecase = false           -- ignore case in searches by default
-vim.opt.smartcase = true            -- but make it case sensitive if an uppercase is entered
+
+o.splitbelow = true
+o.splitright = true
+o.wrap = false
+
+
+--local v = vim.opt
+--
+--v.completeopt = {'menu', 'menuone', 'noselect'}
+--v.mouse = 
+--'a'v.undofile = true
+--v.spelllang = 'en_gb'
+--v.spell = true
+--
+---- Tab
+--v.signcolumn = "yes"
+--v.tabstop = 2
+--v.softtabstop = 2
+--v.shiftwidth = 2
+--v.expandtab = true
+--
+---- UI config
+--v.cursorline = false
+--v.showmode = false
+--
+---- Searching
+--v.incsearch = true
+--v.hlsearch = false
+--v.ignorecase = false
