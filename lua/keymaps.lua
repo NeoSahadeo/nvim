@@ -1,29 +1,43 @@
 local k = vim.keymap.set
-local kd = vim.keymap.del
-local leader = ' '
+local opts = {
+  noremap = true,
+  silent = true,
+}
+local eopts = {
+  noremap = true,
+  silent = true,
+  expr = true,
+}
+local function save() vim.cmd(':w') end
+local builtin = require('telescope.builtin')
 
--- Useful Shortcuts
-k('n', '<C-x>', '<C-^>')
-k('n', '<C-s>', ':w<Cr>')
-k('n', '<C-a>', 'ggVG')
-k({'v', 'i'}, '<C-s>', '<Esc>:w<Cr>')
+-- Useful maps
+k('n', 'c', '"_c', opts)
+k({'n', 'v'}, 'd', '"_d', opts)
+k('v', 'p', 'P', opts)
+k('n', '<C-x>', '<C-^>', opts)
+k('n', '<C-a>', 'ggVG', opts)
 
--- Del key map doesnt work.
-k({'n', 'v', 'i'}, '<C-z>', '')
+-- Easy Save
+k('n', '<C-s>', save, opts)
+k({'i', 'v'}, '<C-s>', '<Esc>:w<Cr>', opts)
 
--- Fuzzy Finder
-k('n', '<C-f>', require('telescope.builtin').find_files)
+-- Remove Ctrl-z
+k({'n', 'i', 'v'}, '<C-z>',
+function ()
+  print('use :q silly billy')
+end, opts)
 
--- Move text up and down
-k('v', '<A-k>', ':m-2<CR>==gv')
-k('v', '<A-j>', ":m'>+<CR>==gv")
+-- Move Code
+k({'v', 'x'}, '<A-k>', ':m \'<-2<Cr>gv=gv', opts)
+k({'v', 'x'}, '<A-j>', ':m \'>+1<Cr>gv=gv', opts)
+k('n', '>', 'V>gv', opts)
+k('n', '<', 'V<gv', opts)
+k({'v', 'x'}, '>', '>gv', opts)
+k({'v', 'x'}, '<', '<gv', opts)
 
--- Nerd Tree
-k('n', '<C-p>', ':NERDTreeToggle<Cr>')
+-- Telescope
+k('n', '<C-f>', builtin.find_files, opts)
 
--- Past Command
--- https://www.reddit.com/r/neovim/comments/v7s1ts/comment/ibov8hd/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
-k("x", "p", function()
-  return 'pgv"'.. vim.v.register .. 'y'
-end, {expr = true})
-
+-- NeoTree
+k('n', '<C-p>', ':Neotree right toggle<Cr>', opts)
