@@ -7,5 +7,6 @@ v.shiftwidth = 2
 v.clipboard = 'unnamedplus'
 v.wrap = false
 v.undofile = true
+v.ruler = true
 
 vim.diagnostic.enable()
