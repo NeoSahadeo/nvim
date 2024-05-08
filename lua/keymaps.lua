@@ -13,7 +13,7 @@ local builtin = require('telescope.builtin')
 
 -- Useful maps
 k('n', 'c', '"_c', opts)
-k({'n', 'v'}, 'd', '"_d', opts)
+-- k({'n', 'v'}, 'd', '"_d', opts)
 k('v', 'p', 'P', opts)
 k('n', '<C-x>', '<C-^>', opts)
 k('n', '<C-a>', 'ggVG', opts)
