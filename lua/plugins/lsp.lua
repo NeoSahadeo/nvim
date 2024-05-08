@@ -24,6 +24,9 @@ function setupLSP()
     l.svelte.setup{
       capabilities = capabilities,
     }
+	l.clangd.setup{
+      capabilities = capabilities,
+	}
 end
 
 function setupCMP()
@@ -112,6 +115,7 @@ function setupPrettier()
 		"typescript",
 		"typescriptreact",
 		"yaml",
+		"c"
 	  },
 	  ["null-ls"] = {
 		  condition = function()

@@ -41,3 +41,8 @@ k('n', '<C-f>', builtin.find_files, opts)
 
 -- NeoTree
 k('n', '<C-p>', ':Neotree right toggle<Cr>', opts)
+
+-- LSP_signature
+vim.keymap.set({ 'n', 'i' }, '<C-k>', function()
+  require('lsp_signature').toggle_float_win()
+end, opts)
