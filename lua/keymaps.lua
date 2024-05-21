@@ -17,6 +17,9 @@ k('n', 'c', '"_c', opts)
 k('v', 'p', 'P', opts)
 k('n', '<C-x>', '<C-^>', opts)
 k('n', '<C-a>', 'ggVG', opts)
+k('n', 'gd', vim.lsp.buf.definition, opts)
+k('n', '<Esc>', ':nohl<Cr><Esc>', opts)
+k({'n', 'i', 'v', 'x'}, '<C-z>', '', opts)
 
 -- Easy Save
 k('n', '<C-s>', save, opts)

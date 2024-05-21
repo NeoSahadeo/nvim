@@ -8,14 +8,14 @@ function setupLSP()
       end,
       capabilities = capabilities,
       settings = {
-	pyright = {
-	  autoImportCompletion = true,
-	},
-	python = {
-	  analysis = {
-	    typeCheckingMode = 'off'
-	  }
-	}
+				pyright = {
+					autoImportCompletion = true,
+				},
+				python = {
+					analysis = {
+						typeCheckingMode = 'off'
+					}
+				}
       }
     }
     l.tsserver.setup{
@@ -24,9 +24,32 @@ function setupLSP()
     l.svelte.setup{
       capabilities = capabilities,
     }
-	l.clangd.setup{
-      capabilities = capabilities,
-	}
+		l.clangd.setup{
+			capabilities = capabilities,
+		}
+		l.tailwindcss.setup{
+			capabilities = capabilities,
+		}
+		l.cssmodules_ls.setup {
+			on_attach = function (client)
+				-- avoid accepting `definitionProvider` responses from this LSP
+				client.server_capabilities.definitionProvider = false
+				custom_on_attach(client)
+			end,
+			init_options = {
+				camelCase = 'dashes',
+			},
+		}
+		--Enable (broadcasting) snippet capability for completion
+		local capa= vim.lsp.protocol.make_client_capabilities()
+		capa.textDocument.completion.completionItem.snippetSupport = true
+		require'lspconfig'.cssls.setup {
+			capabilities = capa,
+		}
+
+		require'lspconfig'.html.setup {
+			capabilities = capabilities,
+		}
 end
 
 function setupCMP()
@@ -115,7 +138,8 @@ function setupPrettier()
 		"typescript",
 		"typescriptreact",
 		"yaml",
-		"c"
+		"c",
+		"svelte"
 	  },
 	  ["null-ls"] = {
 		  condition = function()
@@ -165,8 +189,8 @@ return {
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
     'dcampos/nvim-snippy',
-	'jose-elias-alvarez/null-ls.nvim',
-	'MunifTanjim/prettier.nvim',
+		'jose-elias-alvarez/null-ls.nvim',
+		'MunifTanjim/prettier.nvim',
   },
   config = function ()
     setupCMP()
