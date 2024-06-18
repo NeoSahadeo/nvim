@@ -1,8 +1,10 @@
 function setupLSP()
     require("mason").setup()
     require("mason-lspconfig").setup()
+		local l = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
-    local l = require('lspconfig')
+		capabilities.textDocument.completion.completionItem.snippetSupport = true
+
     l.pyright.setup{
       on_attach = function ()
       end,
@@ -40,11 +42,8 @@ function setupLSP()
 				camelCase = 'dashes',
 			},
 		}
-		--Enable (broadcasting) snippet capability for completion
-		local capa= vim.lsp.protocol.make_client_capabilities()
-		capa.textDocument.completion.completionItem.snippetSupport = true
 		require'lspconfig'.cssls.setup {
-			capabilities = capa,
+			capabilities = capabilities,
 		}
 
 		require'lspconfig'.html.setup {
