@@ -1,6 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
-  dependencies = {
+	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 	},
@@ -9,20 +9,35 @@ return {
 		require("mason-lspconfig").setup()
 
 		local capabilities = require('cmp_nvim_lsp').default_capabilities()
-		local servers = {
-			"lua_ls",
-			"tsserver",
-			"pylsp"
+		require("mason-lspconfig").setup_handlers {
+			-- The first entry (without a key) will be the default handler
+			-- and will be called for each installed server that doesn't have
+			-- a dedicated handler.
+			function (server_name) -- default handler (optional)
+				require("lspconfig")[server_name].setup {
+					capabilities = capabilities,
+				}
+			end,
 		}
-		for _, server in ipairs(servers) do
-			require('lspconfig')[server].setup({
-				capabilities = capabilities,
-			})
-		end
-
 		require("lspconfig").gdscript.setup({
 			name = "godot",
 			cmd = vim.lsp.rpc.connect("127.0.0.1", "6005"),
 		})
 	end
 }
+
+-- local servers = {
+	-- 	"lua_ls",
+	-- 	"tsserver",
+	-- 	"pylsp"
+	-- }
+	-- for _, server in ipairs(servers) do
+	-- 	require('lspconfig')[server].setup({
+		-- 		capabilities = capabilities,
+		-- 	})
+		-- end
+
+		-- require("lspconfig").gdscript.setup({
+			-- 	name = "godot",
+			-- 	cmd = vim.lsp.rpc.connect("127.0.0.1", "6005"),
+			-- })
