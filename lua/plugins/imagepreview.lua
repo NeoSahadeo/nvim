@@ -1,6 +1,7 @@
 return {
-	dir = "~/.config/nvim/lua/plugins/custom_plugins/image_preview.nvim",
-	name = "image_preview.nvim",
+	"NeoSahadeo/image_preview.nvim",
+	-- dir = "~/.config/nvim/lua/plugins/custom_plugins/image_preview.nvim",
+	-- name = "image_preview.nvim",
 	init = function ()
 		require('image_preview').setup({
 			mappings = {
