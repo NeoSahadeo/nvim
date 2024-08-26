@@ -40,7 +40,7 @@ k({'v', 'x'}, '>', '>gv', opts)
 k({'v', 'x'}, '<', '<gv', opts)
 
 -- File explorer == fix later
-k('n', '<C-p>', ':Ex<CR>', opts)
+-- k('n', '<C-p>', ':Ex<CR>', opts)
 
 -- -- LSP_signature
 -- vim.keymap.set({ 'n', 'i' }, '<C-k>', function()
