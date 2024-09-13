@@ -19,6 +19,25 @@ return {
 			log_level = vim.log.levels.WARN,
 			-- All formatter configurations are opt-in
 			filetype = {
+				php = {
+					require('formatter.filetypes.php').phpcbf,
+				},
+				typescript = {
+					require('formatter.filetypes.typescript').prettier,
+				},
+				javascript = {
+					require('formatter.filetypes.javascript').prettier,
+					function()
+						return {
+							exe = 'prettier',
+							args = {
+								'--stdin-filepath',
+								util.escape_path(util.get_current_buffer_file_name()),
+							},
+							stdin = true,
+						}
+					end,
+				},
 				python = {
 					require('formatter.filetypes.python').autopep8,
 				},
