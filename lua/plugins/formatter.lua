@@ -25,6 +25,12 @@ return {
 				typescript = {
 					require('formatter.filetypes.typescript').prettier,
 				},
+				html = {
+					require('formatter.filetypes.html').prettier,
+				},
+				css = {
+					require('formatter.filetypes.css').prettier,
+				},
 				javascript = {
 					require('formatter.filetypes.javascript').prettier,
 					function()
