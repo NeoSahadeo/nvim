@@ -1,18 +1,15 @@
 return {
-	"NeoSahadeo/image_preview.nvim",
-	-- dir = "~/.config/nvim/lua/plugins/custom_plugins/image_preview.nvim",
-	-- name = "image_preview.nvim",
-	init = function ()
-		require('image_preview').setup({
+	'NeoSahadeo/image-preview.nvim',
+	-- dir = '/home/neosahadeo/Documents/Projects/image-preview.nvim',
+	-- name = 'image-preview.nvim',
+	init = function()
+		require('image-preview').setup({
 			mappings = {
 				PreviewImage = {
-						{"n"},
-						" p"
+					{ 'n' },
+					' p', -- <leader>p
 				},
 			},
-			Options = {
-				useFeh = true
-			}
 		})
-	end
+	end,
 }
