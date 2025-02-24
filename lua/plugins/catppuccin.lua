@@ -4,7 +4,7 @@ return {
 	opts = {
 		flavour = 'mocha', -- latte, frappe, macchiato, mocha
 		term_colors = true,
-		transparent_background = true,
+		transparent_background = false,
 		priority = 1000,
 		dim_inactive = {
 			enabled = false, -- dims the background color of inactive window

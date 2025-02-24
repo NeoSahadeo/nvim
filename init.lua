@@ -2,4 +2,4 @@ require('config.options')
 require('config.keymaps')
 require('config.lazy')
 
-vim.cmd('colorscheme carbonfox')
+vim.cmd('colorscheme kanagawa-lotus')
