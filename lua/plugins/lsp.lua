@@ -21,6 +21,16 @@ return {
 			-- 		cmd = vim.lsp.rpc.connect('127.0.0.1', '6005'),
 			-- 	})
 			-- end,
+			['jinja_lsp'] = function()
+				require('lspconfig').jinja_lsp.setup({
+					filetypes = {
+						'jinja',
+						'jinja2',
+						'j2',
+					},
+					capabilities = capabilities,
+				})
+			end,
 		})
 	end,
 }
