@@ -14,4 +14,6 @@ vim.cmd('set signcolumn=yes')
 vim.cmd('set tabstop=2')
 vim.cmd('set shiftwidth=2')
 
+vim.opt.undofile = true
+
 vim.diagnostic.enable()
