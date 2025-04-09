@@ -39,10 +39,6 @@ k('n', '<', 'V<gv', opts)
 k({ 'v', 'x' }, '>', '>gv', opts)
 k({ 'v', 'x' }, '<', '<gv', opts)
 
--- File explorer == fix later
--- k('n', '<C-p>', ':Ex<CR>', opts)
-
--- -- LSP_signature
--- vim.keymap.set({ 'n', 'i' }, '<C-k>', function()
---   require('lsp_signature').toggle_float_win()
--- end, opts)
+-- Trouble https://youtu.be/4aQDOUbErNg
+k({ 'n' }, '<C-l>', '<cmd>Trouble diagnostics toggle<cr>', opts)
+k({ 'n' }, '<A-l>', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', opts)
