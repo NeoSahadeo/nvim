@@ -2,7 +2,14 @@
 
 **Package Manager: Lazy.**
 
-## Getting Started
+## Getting Started (No nvim config)
+
+```bash
+git clone --depth=1 git@github.com:NeoSahadeo/nvim.git
+mv nvim ~/.config/
+```
+
+## Getting Started (Exisiting nvim config)
 
 Run this (or don't)
 
@@ -11,6 +18,8 @@ git clone --depth=1 git@github.com:NeoSahadeo/nvim.git
 mv ~/.config/nvim ~/.config/nvim.old
 mv nvim ~/.config/
 ```
+
+---
 
 The default theme will probably have no background.
 If you want it to, find the `init.lua` file, then
