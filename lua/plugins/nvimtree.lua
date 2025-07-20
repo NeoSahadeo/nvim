@@ -260,13 +260,13 @@ return {
 					default_yes = false,
 				},
 			},
-			experimental = {
-				actions = {
-					open_file = {
-						relative_path = false,
-					},
-				},
-			},
+			-- experimental = {
+			-- 	actions = {
+			-- 		open_file = {
+			-- 			relative_path = false,
+			-- 		},
+			-- 	},
+			-- },
 			log = {
 				enable = false,
 				truncate = false,
