@@ -43,4 +43,5 @@ k({ 'v', 'x' }, '<', '<gv', opts)
 k({ 'n' }, '<C-l>', '<cmd>Trouble diagnostics toggle<cr>', opts)
 k({ 'n' }, '<A-l>', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', opts)
 
-k({ 'n' }, '<A-p>', '<cmd>GitBlameToggle<cr>', opts)
+-- k({ 'n' }, '<A-p>', '<cmd>GitBlameToggle<cr>', opts)
+k({ 'n' }, '<A-p>', '<cmd>ToggleLSP<cr>', opts)

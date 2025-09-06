@@ -25,6 +25,9 @@ return {
 				typescript = {
 					require('formatter.filetypes.typescript').prettier,
 				},
+				typescriptreact = {
+					require('formatter.filetypes.typescript').prettier,
+				},
 				svelte = {
 					require('formatter.filetypes.svelte').prettier,
 				},
