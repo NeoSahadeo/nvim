@@ -5,7 +5,7 @@
 ## Getting Started (No nvim config)
 
 ```bash
-git clone --depth=1 git@github.com:NeoSahadeo/nvim.git
+git clone --depth=1 https://github.com/NeoSahadeo/nvim/
 mv nvim ~/.config/
 ```
 
@@ -14,7 +14,7 @@ mv nvim ~/.config/
 Run this (or don't)
 
 ```bash
-git clone --depth=1 git@github.com:NeoSahadeo/nvim.git
+git clone --depth=1 https://github.com/NeoSahadeo/nvim/
 mv ~/.config/nvim ~/.config/nvim.old
 mv nvim ~/.config/
 ```
