@@ -1,16 +1,16 @@
 return {
-	'metalelf0/black-metal-theme-neovim',
+	"metalelf0/black-metal-theme-neovim",
 	lazy = false,
 	priority = 1000,
 	config = function()
-		require('black-metal').setup({
+		require("black-metal").setup({
 			-----MAIN OPTIONS-----
 			--
 			-- Can be one of: bathory | burzum | dark-funeral | darkthrone | emperor | gorgoroth | immortal | impaled-nazarene | khold | marduk | mayhem | nile | taake | thyrfing | venom | windir
 			-- theme = 'impaled-nazarene',
-			theme = 'windir',
+			theme = "windir",
 			-- Can be one of: 'light' | 'dark', or set via vim.o.background
-			variant = 'dark',
+			variant = "dark",
 			-- Use an alternate, lighter bg
 			alt_bg = false,
 			-- If true, docstrings will be highlighted like strings, otherwise they will be
@@ -44,15 +44,15 @@ return {
 			-- The following table accepts values the same as the `gui` option for normal
 			-- highlights. For example, `bold`, `italic`, `underline`, `none`.
 			code_style = {
-				comments = 'italic',
-				conditionals = 'none',
-				functions = 'none',
-				keywords = 'none',
-				headings = 'bold', -- Markdown headings
-				operators = 'none',
-				keyword_return = 'none',
-				strings = 'none',
-				variables = 'none',
+				comments = "italic",
+				conditionals = "none",
+				functions = "none",
+				keywords = "none",
+				headings = "bold", -- Markdown headings
+				operators = "none",
+				keyword_return = "none",
+				strings = "none",
+				variables = "none",
 			},
 
 			-----PLUGINS-----
@@ -83,6 +83,6 @@ return {
 		})
 		-- Convenience function that simply calls `:colorscheme <theme>` with the theme
 		-- specified in your config.
-		require('black-metal').load()
+		require("black-metal").load()
 	end,
 }
