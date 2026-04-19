@@ -1,25 +1,47 @@
 return {
-	"neovim/nvim-lspconfig",
+	'neovim/nvim-lspconfig',
 	dependencies = {
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
+		'williamboman/mason.nvim',
+		'williamboman/mason-lspconfig.nvim',
 	},
 
 	init = function()
-		require("mason").setup()
-		require("mason-lspconfig").setup({})
+		require('mason').setup()
+		require('mason-lspconfig').setup()
 
-		vim.lsp.config("lua_ls", {
+		-- vim.lsp.config('svelte', {
+		-- 	capabilities = {
+		-- 		textDocument = {
+		-- 			colorProvider = false,
+		-- 		},
+		-- 	},
+		-- })
+
+		vim.lsp.config('pylsp', {
+			settings = {
+				pylsp = {
+					plugins = {
+						pycodestyle = {
+							enabled = true, -- Keep enabled to apply ignores
+							ignore = { 'W503' }, -- Your specific ignores
+							maxLineLength = 88, -- Optional: adjust as needed
+						},
+					},
+				},
+			},
+		})
+
+		vim.lsp.config('lua_ls', {
 			settings = {
 				Lua = {
 					runtime = {
-						version = "LuaJIT",
+						version = 'LuaJIT',
 					},
 					diagnostics = {
-						globals = { "vim" },
+						globals = { 'vim' },
 					},
 					workspace = {
-						library = vim.api.nvim_get_runtime_file("", true),
+						library = vim.api.nvim_get_runtime_file('', true),
 						checkThirdParty = false,
 					},
 					telemetry = {
@@ -28,8 +50,9 @@ return {
 				},
 			},
 		})
-		vim.lsp.config("clangd", {
-			cmd = { "clangd", "--background-index", "--clang-tidy", "--fallback-style=chromium" },
+
+		vim.lsp.config('clangd', {
+			cmd = { 'clangd', '--background-index', '--clang-tidy', '--fallback-style=chromium' },
 			init_options = {
 				clangdFileStatus = true,
 				usePlaceholders = true,

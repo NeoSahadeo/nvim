@@ -17,3 +17,10 @@ vim.cmd('set shiftwidth=2')
 vim.opt.undofile = true
 
 vim.diagnostic.enable()
+
+vim.opt.spelllang = 'en_us'
+
+vim.treesitter.config = {
+	highlight = { enable = true },
+	indent = { enable = true },
+}

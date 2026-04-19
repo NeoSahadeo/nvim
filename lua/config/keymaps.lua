@@ -20,6 +20,7 @@ k("n", "<C-x>", "<C-^>", opts)
 k("n", "<C-a>", "ggVG", opts)
 k("n", "gd", vim.lsp.buf.definition, opts)
 k("n", "<Esc>", ":nohl<Cr><Esc>", opts)
+k("t", "<Esc>", "<C-\\><C-n>", opts)
 k({ "n", "i", "v", "x" }, "<C-z>", "", opts)
 
 -- Easy Save
@@ -47,3 +48,11 @@ k({ "n" }, "<A-l>", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", opts)
 k({ "n" }, "<A-p>", "<cmd>ToggleLSP<cr>", opts)
 
 k({ "n" }, "<A-g>", "<cmd>Telescope git_file_history<cr>", opts)
+
+
+k({ "n" }, "<A-k>",
+	function()
+		require('telescope').extensions.recent_files.pick()
+	end,
+	-- [[<cmd>lua require('telescope').extensions.recent_files.pick()<CR>]],
+	opts)

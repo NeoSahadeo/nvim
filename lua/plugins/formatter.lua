@@ -3,10 +3,16 @@ return {
 	config = function()
 		local augroup = vim.api.nvim_create_augroup
 		local autocmd = vim.api.nvim_create_autocmd
+
 		augroup('__formatter__', { clear = true })
 		autocmd('BufWritePost', {
 			group = '__formatter__',
-			command = ':FormatWrite',
+			pattern = '*',
+			callback = function()
+				if not vim.o.binary then
+					vim.cmd('FormatWrite')
+				end
+			end,
 		})
 		-- Utilities for creating configurations
 		local util = require('formatter.util')
@@ -50,9 +56,11 @@ return {
 						}
 					end,
 				},
+
 				python = {
-					require('formatter.filetypes.python').autopep8,
+					require('formatter.filetypes.python').black,
 				},
+
 				cpp = {
 					-- require('formatter.filetypes.cpp').clangformat,
 					-- function()
@@ -83,6 +91,7 @@ return {
 					-- 	}
 					-- end,
 				},
+
 				lua = {
 					require('formatter.filetypes.lua').stylua,
 
@@ -101,6 +110,9 @@ return {
 						}
 					end,
 				},
+
+				ch8 = {},
+				xxd = {},
 
 				['*'] = {
 					-- "formatter.filetypes.any" defines default configurations for any
