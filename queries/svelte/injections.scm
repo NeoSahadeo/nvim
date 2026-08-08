@@ -1,35 +1,33 @@
-; ~/.config/nvim/after/queries/svelte/injections.scm
+; injections.scm
+; --------------
+((style_element
+  (raw_text) @css))
+
+(
+  (style_element
+    (start_tag
+      (attribute
+        (quoted_attribute_value (attribute_value))))
+    (raw_text) @css)
+)
+
+((attribute
+   (attribute_name) @_attr
+   (quoted_attribute_value (attribute_value) @css))
+ (#eq? @_attr "style"))
+
+((script_element
+  (raw_text) @javascript))
+
+((raw_text_expr) @javascript)
 
 (
   (script_element
     (start_tag
       (attribute
-        (attribute_name) @attr_name
-        (quoted_attribute_value (attribute_value) @attr_value))
-      (#eq? @attr_name "lang")
-      (#eq? @attr_value "js"))
-    (raw_text) @injection.content)
-  (#set! injection.language "javascript")
+        (quoted_attribute_value (attribute_value) @_lang)))
+    (raw_text) @typescript)
+  (#match? @_lang "(ts|typescript)")
 )
-
-(
-  (script_element
-    (start_tag
-      (attribute
-        (attribute_name) @attr_name
-        (quoted_attribute_value (attribute_value) @attr_value))
-      (#eq? @attr_name "lang")
-      (#eq? @attr_value "ts"))
-    (raw_text) @injection.content)
-  (#set! injection.language "typescript")
-)
-
-((start_tag (tag_name) @_tag)
-  (raw_text) @injection.content
-  (#set! injection.language "html")
-  (#set! injection.combined))
-
-((style_element) @injection.content
-  (#set! injection.language "css"))
 
 (comment) @comment

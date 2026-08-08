@@ -1,5 +1,7 @@
-; extends: svelte
+; Special identifiers
+;--------------------
 
+; TODO:
 ((element (start_tag (tag_name) @_tag) (text) @text.title)
  (#match? @_tag "^(h[0-9]|title)$"))
 
@@ -36,10 +38,10 @@
   (quoted_attribute_value)
 ] @string
 
-; [
-;   (text)
-;   (raw_text_expr)
-; ] @none
+[
+  (text)
+  (raw_text_expr)
+] @none
 
 [
   (special_block_keyword)

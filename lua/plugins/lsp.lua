@@ -15,7 +15,15 @@ return {
 		-- 			colorProvider = false,
 		-- 		},
 		-- 	},
-		-- })
+		--
+
+		vim.lsp.config('kotlin_language_server', {
+			cmd = { 'kotlin-language-server' },
+			init_options = {
+				storagePath = vim.fn.expand('$HOME/.kotlin-lsp-cache'),
+			},
+			filetypes = { 'kotlin', 'kt', 'kts' },
+		})
 
 		vim.lsp.config('pylsp', {
 			settings = {
@@ -52,7 +60,14 @@ return {
 		})
 
 		vim.lsp.config('clangd', {
-			cmd = { 'clangd', '--background-index', '--clang-tidy', '--fallback-style=chromium' },
+			cmd = {
+				'clangd',
+				'--background-index',
+				'--clang-tidy',
+				'--fallback-style=chromium',
+				-- '--fallback-style=microsoft',
+				'--header-insertion=never',
+			},
 			init_options = {
 				clangdFileStatus = true,
 				usePlaceholders = true,

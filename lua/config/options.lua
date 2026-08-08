@@ -13,6 +13,8 @@ vim.cmd('set relativenumber')
 vim.cmd('set signcolumn=yes')
 vim.cmd('set tabstop=2')
 vim.cmd('set shiftwidth=2')
+vim.cmd('filetype plugin on')
+vim.cmd('syntax on')
 
 vim.opt.undofile = true
 
