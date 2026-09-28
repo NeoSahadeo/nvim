@@ -68,3 +68,12 @@ k({ 'v', 'x' }, '<Leader>sc', function()
 	require('nvim-silicon').clip()
 	print('Shot')
 end)
+
+-- terminal stuff
+
+k({ 'n' }, '<leader>t', ':vsplit | terminal<CR>', opts)
+k({ 't' }, '<Esc>', [[<C-\><C-n>]], opts)
+k('t', '<C-h>', [[<C-\><C-n><C-w>h]], opts)
+k('t', '<C-j>', [[<C-\><C-n><C-w>j]], opts)
+k('t', '<C-k>', [[<C-\><C-n><C-w>k]], opts)
+k('t', '<C-l>', [[<C-\><C-n><C-w>l]], opts)

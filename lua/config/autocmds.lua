@@ -12,3 +12,17 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 		vim.cmd(string.format('%s', line_number))
 	end,
 })
+
+vim.api.nvim_create_autocmd({ 'TermOpen', 'BufEnter' }, {
+	pattern = 'term://*',
+	callback = function()
+		vim.cmd('startinsert')
+	end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+	pattern = { 'c', 'cpp', 'objc', 'objcpp' },
+	callback = function(args)
+		vim.lsp.enable('clangd')
+	end,
+})

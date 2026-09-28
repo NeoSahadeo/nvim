@@ -17,6 +17,8 @@ return {
 		-- 	},
 		--
 
+		local lspconfig = require('lspconfig')
+
 		vim.lsp.config('kotlin_language_server', {
 			cmd = { 'kotlin-language-server' },
 			init_options = {
@@ -62,6 +64,7 @@ return {
 		vim.lsp.config('clangd', {
 			cmd = {
 				'clangd',
+				'--completion-style=detailed',
 				'--background-index',
 				'--clang-tidy',
 				'--fallback-style=chromium',
